@@ -3,8 +3,16 @@ import 'package:flutter/material.dart';
 class EntryTime extends StatelessWidget {
   final String title;
   final int value;
+  final void Function()? increment;
+  final void Function()? decrement;
 
-  const EntryTime({super.key, required this.title, required this.value});
+  const EntryTime({
+    super.key,
+    required this.title,
+    required this.value,
+    this.increment,
+    this.decrement,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +25,7 @@ class EntryTime extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () {},
+              onPressed: this.decrement,
               child: Icon(Icons.arrow_downward, color: Colors.white),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,
@@ -30,7 +38,7 @@ class EntryTime extends StatelessWidget {
             Text('${this.value} min', style: TextStyle(fontSize: 18)),
 
             ElevatedButton(
-              onPressed: () {},
+              onPressed: this.increment,
               child: Icon(Icons.arrow_upward, color: Colors.white),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,
