@@ -31,6 +31,11 @@ abstract class _PomodoroStore with Store {
   }
 
   @action
+  void restart() {
+    started = false;
+  }
+
+  @action
   void incrementWorkTime() {
     workTime++;
   }

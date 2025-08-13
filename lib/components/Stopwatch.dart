@@ -54,6 +54,7 @@ class Stopwatch extends StatelessWidget {
                   child: StopwatchButton(
                     text: 'Reiniciar',
                     icon: Icons.refresh,
+                    click: store.restart,
                   ),
                 ),
               ],
